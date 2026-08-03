@@ -1,0 +1,252 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Garo Wallbox einrichten",
+        "description": "IP-Adresse der Garo Wallbox eingeben.",
+        "data": {
+          "host": "Host",
+          "name": "Anzeigename",
+          "device_fetch_interval": "Abfrageintervall (Sekunden)",
+          "meter_fetch_interval": "Zähler-Abfrageintervall (Sekunden)"
+        }
+      }
+    },
+    "abort": {
+      "device_timeout": "Verbindung zum Gerät hat das Zeitlimit überschritten.",
+      "device_fail": "Unerwarteter Fehler beim Erstellen des Geräts.",
+      "already_configured": "Gerät ist bereits konfiguriert"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "host": "Host",
+          "name": "Anzeigename",
+          "device_fetch_interval": "Abfrageintervall (Sekunden)",
+          "meter_fetch_interval": "Zähler-Abfrageintervall (Sekunden)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "sensor": {
+        "state": {
+          "ALWAYS_ON": "Laden verfügbar",
+          "ALWAYS_OFF": "Laden nicht verfügbar",
+          "SCHEMA": "Zeitplan"
+        }
+      },
+      "status": {
+        "name": "Status",
+        "state": {
+          "CHANGING": "...",
+          "NOT_CONNECTED": "Kein Fahrzeug verbunden",
+          "CONNECTED": "Wartet auf Startsignal vom Fahrzeug",
+          "SEARCH_COMM": "Kein Fahrzeug verbunden",
+          "RCD_FAULT": "FI-Schutzschalter ausgelöst",
+          "CHARGING": "Wird geladen",
+          "CHARGING_PAUSED": "Laden durch Lastmanagementsystem pausiert",
+          "CHARGING_FINISHED": "Laden vom Fahrzeug beendet",
+          "CHARGING_CANCELLED": "Laden abgebrochen",
+          "DISABLED": "Laden deaktiviert",
+          "OVERHEAT": "Übertemperatur – Laden vorübergehend auf 6A begrenzt",
+          "CRITICAL_TEMPERATURE": "Übertemperatur – Laden abgebrochen",
+          "INITIALIZATION": "Initialisierung...",
+          "CABLE_FAULT": "Kabelfehler",
+          "LOCK_FAULT": "Verriegelungsfehler",
+          "CONTACTOR_FAULT:": "Schützfehler",
+          "VENT_FAULT": "Belüftung erforderlich",
+          "DC_ERROR": "DC-Fehler erkannt",
+          "DC_HARDWARE": "DC-Erkennungsfehler – Laden deaktiviert",
+          "CP_FAULT": "CP-Signalfehler – Laden gestoppt",
+          "CP_SHORTED": "CP-Signal kurzgeschlossen – Laden gestoppt",
+          "REMOTE_DISABLED": "Laden extern deaktiviert",
+          "UNAVAILABLE": "Laden pausiert",
+          "UNKNOWN": "Kommunikationsfehler"
+        }
+      },
+      "current_charging_current": {
+        "name": "Ladestrom"
+      },
+      "current_charging_power": {
+        "name": "Ladeleistung"
+      },
+      "nr_of_phases": {
+        "name": "Phasenanzahl",
+        "state": {
+          "1": "Einphasig",
+          "2": "Zweiphasig",
+          "3": "Dreiphasig"
+        }
+      },
+      "current_limit": {
+        "name": "Stromgrenze"
+      },
+      "pilot_level": {
+        "name": "Pilot-Pegel"
+      },
+      "acc_session_energy": {
+        "name": "Diese Sitzung geladen "
+      },
+      "latest_reading": {
+        "name": "Gesamtenergie"
+      },
+      "latest_reading_k": {
+        "name": "Gesamtenergie (kWh)"
+      },
+      "current_temperature": {
+        "name": "Temperatur"
+      },
+      "left_status": {
+        "name": "Linker Anschluss",
+        "state": {
+          "CHANGING": "...",
+          "NOT_CONNECTED": "Kein Fahrzeug verbunden",
+          "CONNECTED": "Wartet auf Startsignal vom Fahrzeug",
+          "SEARCH_COMM": "Kein Fahrzeug verbunden",
+          "RCD_FAULT": "FI-Schutzschalter ausgelöst",
+          "CHARGING": "Wird geladen",
+          "CHARGING_PAUSED": "Laden durch Lastmanagementsystem pausiert",
+          "CHARGING_FINISHED": "Laden vom Fahrzeug beendet",
+          "CHARGING_CANCELLED": "Laden abgebrochen",
+          "DISABLED": "Laden deaktiviert",
+          "OVERHEAT": "Übertemperatur – Laden vorübergehend auf 6A begrenzt",
+          "CRITICAL_TEMPERATURE": "Übertemperatur – Laden abgebrochen",
+          "INITIALIZATION": "Initialisierung...",
+          "CABLE_FAULT": "Kabelfehler",
+          "LOCK_FAULT": "Verriegelungsfehler",
+          "CONTACTOR_FAULT:": "Schützfehler",
+          "VENT_FAULT": "Belüftung erforderlich",
+          "DC_ERROR": "DC-Fehler erkannt",
+          "DC_HARDWARE": "DC-Erkennungsfehler – Laden deaktiviert",
+          "CP_FAULT": "CP-Signalfehler – Laden gestoppt",
+          "CP_SHORTED": "CP-Signal kurzgeschlossen – Laden gestoppt",
+          "REMOTE_DISABLED": "Laden extern deaktiviert",
+          "UNAVAILABLE": "Laden pausiert",
+          "UNKNOWN": "Kommunikationsfehler"
+        }
+      },
+      "left_current_charging_current": {
+        "name": "Ladestrom links"
+      },
+      "left_current_charging_power": {
+        "name": "Ladeleistung links"
+      },
+      "left_nr_of_phases": {
+        "name": "Phasenanzahl links",
+        "state": {
+          "1": "Einphasig",
+          "2": "Zweiphasig",
+          "3": "Dreiphasig"
+        }
+      },
+      "left_pilot_level": {
+        "name": "Pilot-Pegel links"
+      },
+      "left_acc_session_energy": {
+        "name": "Sitzungsenergie links"
+      },
+      "left_acc_energy": {
+        "name": "Gesamtenergie links"
+      },
+      "right_status": {
+        "name": "Rechter Anschluss",
+        "state": {
+          "CHANGING": "...",
+          "NOT_CONNECTED": "Kein Fahrzeug verbunden",
+          "CONNECTED": "Wartet auf Startsignal vom Fahrzeug",
+          "SEARCH_COMM": "Kein Fahrzeug verbunden",
+          "RCD_FAULT": "FI-Schutzschalter ausgelöst",
+          "CHARGING": "Wird geladen",
+          "CHARGING_PAUSED": "Laden durch Lastmanagementsystem pausiert",
+          "CHARGING_FINISHED": "Laden vom Fahrzeug beendet",
+          "CHARGING_CANCELLED": "Laden abgebrochen",
+          "DISABLED": "Laden deaktiviert",
+          "OVERHEAT": "Übertemperatur – Laden vorübergehend auf 6A begrenzt",
+          "CRITICAL_TEMPERATURE": "Übertemperatur – Laden abgebrochen",
+          "INITIALIZATION": "Initialisierung...",
+          "CABLE_FAULT": "Kabelfehler",
+          "LOCK_FAULT": "Verriegelungsfehler",
+          "CONTACTOR_FAULT:": "Schützfehler",
+          "VENT_FAULT": "Belüftung erforderlich",
+          "DC_ERROR": "DC-Fehler erkannt",
+          "DC_HARDWARE": "DC-Erkennungsfehler – Laden deaktiviert",
+          "CP_FAULT": "CP-Signalfehler – Laden gestoppt",
+          "CP_SHORTED": "CP-Signal kurzgeschlossen – Laden gestoppt",
+          "REMOTE_DISABLED": "Laden extern deaktiviert",
+          "UNAVAILABLE": "Laden pausiert",
+          "UNKNOWN": "Kommunikationsfehler"
+        }
+      },
+      "right_current_charging_current": {
+        "name": "Ladestrom rechts"
+      },
+      "right_current_charging_power": {
+        "name": "Ladeleistung rechts"
+      },
+      "right_nr_of_phases": {
+        "name": "Phasenanzahl rechts",
+        "state": {
+          "1": "Einphasig",
+          "2": "Zweiphasig",
+          "3": "Dreiphasig"
+        }
+      },
+      "right_pilot_level": {
+        "name": "Pilot-Pegel rechts"
+      },
+      "right_acc_session_energy": {
+        "name": "Sitzungsenergie rechts"
+      },
+      "right_acc_energy": {
+        "name": "Gesamtenergie rechts"
+      }
+    },
+    "select": {
+      "sensor": {
+        "state": {
+          "ALWAYS_ON": "Laden verfügbar",
+          "ALWAYS_OFF": "Laden nicht verfügbar",
+          "SCHEMA": "Zeitplan"
+        }
+      },
+      "outlet": {
+        "name": "Anschluss",
+        "state": {
+          "UNLOCKED": "Entriegelt",
+          "LOCKED": "Verriegelt",
+          "LOCKED_WITH_POWER_LOSS_UNLOCK": "Verriegelt mit Entriegelung bei Stromausfall"
+        }
+      },
+      "left_outlet": {
+        "name": "Anschluss links",
+        "state": {
+          "UNLOCKED": "Entriegelt",
+          "LOCKED": "Verriegelt",
+          "LOCKED_WITH_POWER_LOSS_UNLOCK": "Verriegelt mit Entriegelung bei Stromausfall"
+        }
+      },
+      "right_outlet": {
+        "name": "Anschluss rechts",
+        "state": {
+          "UNLOCKED": "Entriegelt",
+          "LOCKED": "Verriegelt",
+          "LOCKED_WITH_POWER_LOSS_UNLOCK": "Verriegelt mit Entriegelung bei Stromausfall"
+        }
+      }
+    },
+    "number": {
+      "current_limit": {
+        "name": "Stromgrenze"
+      }
+    },
+    "switch": {
+      "charge_limit": {
+        "name": "Ladelimit"
+      }
+    }
+  }
+}
